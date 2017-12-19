@@ -2,7 +2,7 @@ defmodule Sling.GuardianSerializer do
   @behaviour Guardian.Serializer
 
   alias Sling.Repo
-  alias Sling.User
+  alias Sling.Accounts.User
 
   def for_token(user = %User{}), do: {:ok, "user:#{user.id}"}
   def for_token(_), do: {:error, "Unknown resource type"}
